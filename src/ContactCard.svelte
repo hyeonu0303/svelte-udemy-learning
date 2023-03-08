@@ -1,12 +1,8 @@
 <script>
-  //프로퍼티를 생성한것임 변수를 내보내는거임
   export let userName;
   export let jobTitle;
   export let description;
-  export let userImg;
- 
-  
-  
+  export let userImage;
 </script>
 
 <style>
@@ -15,6 +11,7 @@
     max-width: 30rem;
     border-radius: 5px;
     margin: 1rem 0;
+    background: white;
   }
 
   header {
@@ -27,13 +24,12 @@
   .thumb {
     width: 33%;
     height: 100%;
-    background: #ccc;
   }
+
   .thumb-placeholder {
     background: #ccc;
   }
 
-  
   img {
     width: 100%;
     height: 100%;
@@ -70,8 +66,8 @@
 
 <div class="contact-card">
   <header>
-    <div class="thumb" class:thumb-placeholder = "{!userImg}">
-      <img src="{userImg}" alt="펭수사진" />
+    <div class="thumb" class:thumb-placeholder="{!userImage}">
+      <img src={userImage} alt={userName} />
     </div>
     <div class="user-data">
       <h1>{userName}</h1>
@@ -79,7 +75,6 @@
     </div>
   </header>
   <div class="description">
-    <p>{@html description}</p>
+    <p>{description}</p>
   </div>
-  
 </div>
