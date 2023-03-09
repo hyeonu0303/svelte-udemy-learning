@@ -8,7 +8,8 @@
 	let formState = '';
 
   let createContact = [];
-	let addConstract = () => {
+	let addConstract = (event) => {
+    //event.preventDefault;
 		if (name.trim().length==0 || title.trim().length == 0 || image.trim().length == 0 || description.trim().length == 0)
     {
       formState = 'invalid';
@@ -63,7 +64,6 @@
   <button on:click|preventDefault={addConstract} type="submit">Add Contact card</button>
 </form>
 
-<button on:click={addConstract}>카드추가</button>
 <button on:click={deleteFirst}>첫번째 카드제거</button>
 <button on:click={deleteLast}>마지막 카드제거</button>
 {#if formState === 'invalid'}
